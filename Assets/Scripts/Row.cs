@@ -91,6 +91,7 @@ public class Row : MonoBehaviour
         }
 
         SnapToNearestIcon();
+        AudioManager.Instance.StopReelScroll();
         rowStopped = true;
     }
 

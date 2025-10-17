@@ -66,9 +66,11 @@ public class GameManager : MonoBehaviour
     {
         SetAllSpinButtons(false);   // lock while spinning
 
+        AudioManager.Instance.PlayLeverPull();
         leverAnimator.Play("LeverPull", 0, 0);
         yield return new WaitForSeconds(1f); // let 1-s animation finish
 
+        AudioManager.Instance.StartReelScroll();
         HandlePulled?.Invoke();      // fire reels
         reelsEverFired = true;
         yield return new WaitForSeconds(0.15f);
@@ -112,6 +114,7 @@ public class GameManager : MonoBehaviour
             credits += pay;
             winText.text = $"JACKPOT {pay}!";
             winText.enabled = true;
+            AudioManager.Instance.PlayWin();
         }
         else
         {
