@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Simple helper to open/close the pay-table info panel.
+/// Attach to any UI button or close button inside the panel.
+/// </summary>
 public class PayTableBuilder : MonoBehaviour
 {
     [Header("Existing UI")]
